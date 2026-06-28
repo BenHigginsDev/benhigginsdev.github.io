@@ -84,6 +84,11 @@ nav {
   color: var(--accent-color);
 }
 
+/* Highlight the active link */
+.nav-links a.active {
+  color: var(--accent-color); /* Keeps the active link highlighted even when not hovered */
+  border-bottom: 2px solid var(--accent-color); /* Adds an underline to active page */
+}
 
 /* Contact links with icons */
 .contact-link {
