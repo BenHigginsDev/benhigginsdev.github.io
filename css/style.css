@@ -204,9 +204,7 @@ nav {
 
 /* Left Side: Image wrapper */
 .project-image-wrapper {
-  flex: 1;             
-  background-color: #2b14c5; 
-  padding: 40px;       
+  flex: 1;
   border-radius: 12px;
   display: flex;
   justify-content: center;
