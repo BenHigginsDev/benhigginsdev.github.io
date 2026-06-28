@@ -1,10 +1,11 @@
 /* Variables setup */
-:root {
-  --bg-color: #121212;         /* Deep dark background */
+:root, .dark-mode {
+  --bg-color: #121212;         /* Dark background */
   --text-color: #e0e0e0;       /* Light grey text */
   --nav-bg: #1e1e1e;          /* Slightly lighter dark for the nav bar */
   --accent-color: #20865f;     /* Hover accent colour */
   --font-size-body: 18px;      /* Increases overall text size */
+  --border-color: #2a2a2a;     /* Separator line colour */
 }
 
 /* When body has the light-mode class, swap the colors */
@@ -12,6 +13,7 @@
   --bg-color: #ffffff;         /* White background */
   --text-color: #222222;       /* Dark grey text */
   --nav-bg: #f5f5f5;          /* Light grey navigation rectangle */
+  --border-color: #e0e0e0;     /* Lighter separator line colour */
 }
 
 /* Global styles */
@@ -21,7 +23,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-size: var(--font-size-body);
-    line-height: 1.6;          /* Adds room between lines of text */
+    line-height: 1.6; /* Adds room between lines of text */
+    transition: background-color 0.15s ease, color 0.15s ease; /* Smooth transition for theme changes */
 }
 
 /* Heading 1 formatting */
@@ -43,7 +46,7 @@ nav {
   align-items: center; /* Vertically centers the button and nav links */
   background-color: var(--nav-bg);
   padding: 20px 24px; /* Vertical and horizontal padding for the rectangle shape */
-  border-bottom: 2px solid #2a2a2a; /* Separator line below the nav block */
+  border-bottom: 2px solid var(--border-color); /* Separator line below the nav block */
 }
 
 /* Style the button container for the icons */

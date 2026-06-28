@@ -7,11 +7,17 @@
 <link rel="stylesheet" href="css/style.css">
 
 <!-- This script stops the loading flash by checking the theme before anything else loads -->
-  <script>
-    if (localStorage.getItem('portfolio-theme') === 'light') {
-      document.documentElement.classList.add('light-mode');
-    }
-  </script>
+<script>
+    (function() {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        // If user explicitly chose light, or if they have no preference set yet but their system prefers light
+        if (savedTheme === 'light') {
+            document.documentElement.className = 'light-mode';
+        } else {
+            document.documentElement.className = 'dark-mode';
+        }
+    })();
+</script>
 
 </head>
 <body>
