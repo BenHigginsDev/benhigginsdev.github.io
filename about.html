@@ -4,14 +4,39 @@
 <title>About Me</title>
 <link rel="icon" type="image/x-icon" href="images/cooltext511222181668137.png">
 <link rel="stylesheet" href="css/style.css">
+
+<!-- This script stops the loading flash by checking the theme before anything else loads -->
+  <script>
+    if (localStorage.getItem('portfolio-theme') === 'light') {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
+
 </head>
 <body>
 
 <nav>
+  <!-- The theme toggle button stays on the left -->
+  <button class="theme-toggle">
+    <ion-icon name="sunny-outline"></ion-icon>
+  </button>
+
+  <!-- The wrapper grouping your menu links together -->
+  <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
+  </div>
 </nav>
+
+<!-- 
+  Icons powered by Ionicons (https://ionic.io/ionicons)
+  Copyright (c) Ionic Team. Licensed under the MIT License.
+-->
+<script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>

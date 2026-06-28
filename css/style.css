@@ -1,44 +1,101 @@
+/* Variables setup */
+:root {
+  --bg-color: #121212;         /* Deep dark background */
+  --text-color: #e0e0e0;       /* Light grey text */
+  --nav-bg: #1e1e1e;          /* Slightly lighter dark for the nav bar */
+  --accent-color: #0076ff;     /* Hover blue */
+  --font-size-body: 18px;      /* Increases overall text size */
+}
+
+/* When body has the light-mode class, swap the colors */
+.light-mode {
+  --bg-color: #ffffff;         /* White background */
+  --text-color: #222222;       /* Dark grey text */
+  --nav-bg: #f5f5f5;          /* Light grey navigation rectangle */
+}
+
+/* Global styles */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 20px;
-    background-color: #ffffff;
-    color: #333;
+    margin: 0; /* Removes the 20px edge margin so nav can stretch full-width */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--font-size-body);
+    line-height: 1.6;          /* Adds room between lines of text */
 }
 
+/* Heading 1 formatting */
 h1 {
-    color: #333;
+    color: var(--text-color);
+    font-size: 36px;
+    margin: 40px 20px 20px;    /* Adds margin to the sides since body margin is 0 (due to nav) */
 }
 
-/* Style the navigation container */
+/* Paragraph formatting */
+p {
+    margin: 20px; /* Adds margin for same reason as headings */
+}
+
+/* Horizontal rectangular navigation bar */
 nav {
-  display: flex;                /* Arranges links horizontally */
-  gap: 20px;                    /* Adds clean spacing between links */
-  margin-bottom: 30px;          /* Adds space below the menu before the title */
+  display: flex;
+  align-items: center; /* Vertically centers the button and nav links */
+  background-color: var(--nav-bg);
+  padding: 20px 20px; /* Vertical and horizontal padding for the rectangle shape */
+  border-bottom: 2px solid #2a2a2a; /* Separator line below the nav block */
+}
+
+/* Style the button container for the icons */
+.theme-toggle {
+    background: none; /* background and border removes default button background */
+    border: none;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+
+}
+
+.theme-toggle:hover {
+    color: #ffb703; /* A sun colour for hover effect on the button */
+}
+
+
+/* The wrapper holding the text links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  margin-left: auto; /* Pushes the links to the far right */
 }
 
 /* Style the navigation links */
-nav a {
-  text-decoration: none;        /* Removes the default underline */
-  color: inherit; 
-  font-size: 16px;              /* Standard readable menu size */
-  font-weight: 500;             /* Makes the text slightly sharper */
-  transition: color 0.2s ease;  /* Smooth hover transition */
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 /* Highlight the link when hovered */
-nav a:hover {
-  color: #0076ff;
+.nav-links a:hover {
+  color: var(--accent-color);
 }
 
-/* Style the contact link with an icon */
+
+/* Contact links with icons */
 .contact-link {
-  text-decoration: none; 
-  color: inherit; 
-  display: inline-flex; 
-  align-items: center; 
-  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Slightly larger gap next to icons */
+  font-size: 20px; /* Bumps up contact text size specifically */
+  transition: color 0.2s ease;
 }
 
 .contact-link:hover {
-  color: #0076ff;
+  color: var(--accent-color);
 }
