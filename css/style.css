@@ -3,7 +3,7 @@
   --bg-color: #121212;         /* Deep dark background */
   --text-color: #e0e0e0;       /* Light grey text */
   --nav-bg: #1e1e1e;          /* Slightly lighter dark for the nav bar */
-  --accent-color: #0076ff;     /* Hover blue */
+  --accent-color: #20865f;     /* Hover accent colour */
   --font-size-body: 18px;      /* Increases overall text size */
 }
 
@@ -27,13 +27,14 @@ body {
 /* Heading 1 formatting */
 h1 {
     color: var(--text-color);
-    font-size: 36px;
-    margin: 40px 20px 20px;    /* Adds margin to the sides since body margin is 0 (due to nav) */
+    font-size: clamp(28px, 5vw, 36px); /* Dynamic font size between 28px and 36px */
+    /* Adds margin to the sides since body margin is 0 (due to nav), also uses 5% side margins instead of being fixed */
+    margin: 40px 24px 20px;
 }
 
 /* Paragraph formatting */
 p {
-    margin: 20px; /* Adds margin for same reason as headings */
+    margin: 20px 24px; /* Adds margin for same reason as headings */
 }
 
 /* Horizontal rectangular navigation bar */
@@ -41,7 +42,7 @@ nav {
   display: flex;
   align-items: center; /* Vertically centers the button and nav links */
   background-color: var(--nav-bg);
-  padding: 20px 20px; /* Vertical and horizontal padding for the rectangle shape */
+  padding: 20px 24px; /* Vertical and horizontal padding for the rectangle shape */
   border-bottom: 2px solid #2a2a2a; /* Separator line below the nav block */
 }
 
@@ -102,4 +103,33 @@ nav {
 
 .contact-link:hover {
   color: var(--accent-color);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+@media (max-width: 600px) {
+  /* Give the mobile nav bar room */
+  nav {
+    padding: 15px 5%;
+    gap: 15px;
+  }
+
+  h1 {
+    margin: 30px 5% 15px; /* Adjusts the margins for smaller screens */
+  }
+
+  p {
+    margin: 15px 5%; /* Adjusts the margins for smaller screens */
+  }
+
+  /* Make links slightly tighter together to fit small widths */
+  .nav-links {
+    gap: 15px;
+  }
+
+  /* Reduce the spacing slightly on icons for mobile screen limits */
+  .contact-link {
+    font-size: 18px;
+    gap: 8px;
+  }
 }
