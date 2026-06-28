@@ -23,23 +23,53 @@
 <body>
 
 <nav>
-  <!-- The theme toggle button stays on the left -->
-  <button class="theme-toggle">
-    <ion-icon name="sunny-outline"></ion-icon>
-  </button>
+    <div class="nav-content">
+        <!-- The theme toggle button stays on the left -->
+        <button class="theme-toggle">
+            <ion-icon name="sunny-outline"></ion-icon>
+        </button>
 
-  <!-- The wrapper grouping your menu links together -->
-  <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-  </div>
+        <!-- The wrapper grouping your menu links together -->
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
 </nav>
 
 
-<h1>Ben Higgins</h1>
-<p>Portfolio</p>
+<main class="container">
+    <!-- Profile header -->
+    <header class="profile-intro">
+        <h1>Hi, I'm Ben Higgins</h1>
+        <p> Software Developer & Designer</p>
+    </header>
 
+    <!-- Projects section -->
+    <section class="projects-section">
+        <h2>My Projects</h2>
+
+        <div class="projects-list">
+
+            <!-- Project 1 -->
+            <article class="project-row">
+                <div class="project-text">
+                    <h3>Library Management System</h3>
+                    <p>A comprehensive system designed to track book inventories, user checkouts, and overdue returns using modern databases.</p>
+                    
+                    <div class="project-actions">
+                        <a href="projects/library-management-system.html" class="learn-more-btn">LEARN MORE</a>
+                    </div>
+                </div>
+
+                <div class="project-image-wrapper">
+                    <img src="images/cooltext511222181668137.png" alt="Library Management System" class="project-img">
+                </div>
+            </article>
+
+        </div>
+    </section>
 <!-- 
   Icons powered by Ionicons (https://ionic.io/ionicons)
   Copyright (c) Ionic Team. Licensed under the MIT License.

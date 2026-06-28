@@ -45,7 +45,7 @@ nav {
   display: flex;
   align-items: center; /* Vertically centers the button and nav links */
   background-color: var(--nav-bg);
-  padding: 20px 24px; /* Vertical and horizontal padding for the rectangle shape */
+  padding: 20px 0;
   border-bottom: 2px solid var(--border-color); /* Separator line below the nav block */
 }
 
@@ -66,6 +66,13 @@ nav {
     color: #ffb703; /* A sun colour for hover effect on the button */
 }
 
+.nav-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+}
 
 /* The wrapper holding the text links */
 .nav-links {
@@ -108,9 +115,128 @@ nav {
   color: var(--accent-color);
 }
 
+/* Home page and projects layout */
+
+/* Main centre container to keep content from spreading too wide on large screens */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the container */
+    padding: 40px 24px; /* Matches global horizontal layout */
+}
+
+/* Intro header and paragraph formatting */
+.profile-intro h1 {
+    margin: 0 0 10px 0; /* Overrides global h1 margin to keep the intro tight */
+}
+
+.profile-intro p {
+    margin: 0 0 40px 0; /* Overrides global paragraph margin */
+}
+
+/* Projects section formatting */
+
+/* Projects section header */
+.projects-section h2 {
+    font-size: 28px;
+    margin: 0 0 40px 0;
+    color: var(--text-color);
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* The wide row container */
+.project-row {
+  display: flex;
+  /* MAGIC STEP: This visually flips the layout on desktop so image is Left, text is Right */
+  flex-direction: row-reverse; 
+  align-items: center; 
+  gap: 5%;             
+  width: 100%;
+}
+
+/* Right Side: Text content */
+.project-text {
+  flex: 1;             
+  display: flex;
+  flex-direction: column;
+}
+
+.project-text h3 {
+  margin: 0 0 16px 0;
+  font-size: 32px;     
+  color: #ffffff;
+}
+
+.light-mode .project-text h3 {
+  color: #111111;
+}
+
+.project-text p {
+  margin: 0 0 30px 0;  
+  font-size: 18px;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.project-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.learn-more-btn {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px; 
+  border-bottom: 2px solid var(--accent-color); 
+  padding-bottom: 6px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.learn-more-btn:hover {
+  color: var(--accent-color);
+}
+
+/* Left Side: Image wrapper */
+.project-image-wrapper {
+  flex: 1;             
+  background-color: #2b14c5; 
+  padding: 40px;       
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+}
+
+/* Prevents double-spacing inside the main container, so all pages sit at same height due to index.html having .profile-intro */
+.container h1 {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container h2, 
+.container p {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 /* --- RESPONSIVE MEDIA QUERIES --- */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   /* Give the mobile nav bar room */
   nav {
     padding: 15px 5%;
@@ -134,5 +260,25 @@ nav {
   .contact-link {
     font-size: 18px;
     gap: 8px;
+  }
+
+.project-row {
+    flex-direction: column; /* Stacks components vertically on smaller screens */
+    gap: 30px;
+  }
+  
+  /* FORCE STACKING ORDER: Forces screenshot to top, text underneath */
+  .project-image-wrapper {
+    order: 1;            /* Places image block first in the stack */
+    width: 100%;
+    padding: 20px;
+  }
+
+  .project-text {
+    order: 2;            /* Places text block second in the stack */
+  }
+  
+  .project-text h3 {
+    font-size: 26px;
   }
 }
