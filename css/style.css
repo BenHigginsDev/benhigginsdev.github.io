@@ -8,3 +8,37 @@ body {
 h1 {
     color: #333;
 }
+
+/* Style the navigation container */
+nav {
+  display: flex;                /* Arranges links horizontally */
+  gap: 20px;                    /* Adds clean spacing between links */
+  margin-bottom: 30px;          /* Adds space below the menu before the title */
+}
+
+/* Style the navigation links */
+nav a {
+  text-decoration: none;        /* Removes the default underline */
+  color: inherit; 
+  font-size: 16px;              /* Standard readable menu size */
+  font-weight: 500;             /* Makes the text slightly sharper */
+  transition: color 0.2s ease;  /* Smooth hover transition */
+}
+
+/* Highlight the link when hovered */
+nav a:hover {
+  color: #0076ff;
+}
+
+/* Style the contact link with an icon */
+.contact-link {
+  text-decoration: none; 
+  color: inherit; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 8px;
+}
+
+.contact-link:hover {
+  color: #0076ff;
+}
