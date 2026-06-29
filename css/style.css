@@ -100,8 +100,13 @@ nav {
 
 }
 
+/* Dark mode hover -> sun icon turns yellow */
 .theme-toggle:hover {
     color: #ffb703; /* A sun colour for hover effect on the button */
+}
+
+.light-mode .theme-toggle:hover {
+    color: var(--text-color); /* A moon colour for hover effect on the button */
 }
 
 /* The wrapper holding the text links */
