@@ -1,4 +1,6 @@
-/* Variables setup */
+/* ==========================================================================
+   VARIABLES & THEMES
+   ========================================================================== */
 :root, .dark-mode {
   --bg-color: #121212;         /* Dark background */
   --text-color: #e0e0e0;       /* Light grey text */
@@ -16,7 +18,9 @@
   --border-color: #e0e0e0;     /* Lighter separator line colour */
 }
 
-/* Global styles */
+/* ==========================================================================
+   GLOBAL BASE ELEMENTS
+   ========================================================================== */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0; /* Removes the 20px edge margin so nav can stretch full-width */
@@ -40,6 +44,32 @@ p {
     margin: 20px 24px; /* Adds margin for same reason as headings */
 }
 
+/* ==========================================================================
+   STRUCTURAL LAYOUT WRAPPERS (The Page Backbone)
+   ========================================================================== */
+/* Main centre container to keep content from spreading too wide on large screens */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the container */
+    padding: 40px 24px; /* Matches global horizontal layout */
+}
+
+/* Prevents double-spacing inside the main container, so all pages sit at same height due to index.html having .profile-intro */
+.container h1 {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container h2, 
+.container p {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* ==========================================================================
+   REUSABLE COMPONENTS (Shared Navigation & Links)
+   ========================================================================== */
 /* Horizontal rectangular navigation bar */
 nav {
   display: flex;
@@ -47,6 +77,14 @@ nav {
   background-color: var(--nav-bg);
   padding: 20px 0;
   border-bottom: 2px solid var(--border-color); /* Separator line below the nav block */
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
 }
 
 /* Style the button container for the icons */
@@ -64,14 +102,6 @@ nav {
 
 .theme-toggle:hover {
     color: #ffb703; /* A sun colour for hover effect on the button */
-}
-
-.nav-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 0 40px;
-    box-sizing: border-box; /* Ensures padding doesn't affect total width */
 }
 
 /* The wrapper holding the text links */
@@ -115,15 +145,9 @@ nav {
   color: var(--accent-color);
 }
 
-/* Home page and projects layout */
-
-/* Main centre container to keep content from spreading too wide on large screens */
-.container {
-    max-width: 1200px;
-    margin: 0 auto; /* Centers the container */
-    padding: 40px 24px; /* Matches global horizontal layout */
-}
-
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES (Home Page / Projects)
+   ========================================================================== */
 /* Intro header and paragraph formatting */
 .profile-intro h1 {
     margin: 0 0 10px 0; /* Overrides global h1 margin to keep the intro tight */
@@ -219,20 +243,31 @@ nav {
   box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
 }
 
-/* Prevents double-spacing inside the main container, so all pages sit at same height due to index.html having .profile-intro */
-.container h1 {
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
+/* Project detail pages */
+.project-back-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
 }
 
-.container h2, 
-.container p {
-    margin-left: 0;
-    margin-right: 0;
+.back-btn {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px; 
+  border-bottom: 2px solid var(--accent-color); 
+  padding-bottom: 6px;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-/* --- RESPONSIVE MEDIA QUERIES --- */
+.back-btn:hover {
+  color: var(--accent-color);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 
 @media (max-width: 800px) {
   /* Give the mobile nav bar room */
