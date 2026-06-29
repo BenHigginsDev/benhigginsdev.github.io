@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Management System</title>
+<link rel="icon" type="image/x-icon" href="../images/cooltext511222181668137.png">
+<link rel="stylesheet" href="../css/style.css">
+
+<!-- This script stops the loading flash by checking the theme before anything else loads -->
+<script>
+    (function() {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        // If user explicitly chose light, or if they have no preference set yet but their system prefers light
+        if (savedTheme === 'light') {
+            document.documentElement.className = 'light-mode';
+        } else {
+            document.documentElement.className = 'dark-mode';
+        }
+    })();
+</script>
+
+</head>
+<body>
+
+<nav>
+    <div class="nav-content">
+        <!-- The theme toggle button stays on the left -->
+        <button class="theme-toggle">
+            <ion-icon name="sunny-outline"></ion-icon>
+        </button>
+
+        <!-- The wrapper grouping your menu links together -->
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../contact.html">Contact</a>
+            <a href="../about.html">About</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <h1>Project 2</h1>
+    <p>Description for Project 2</p>
+
+    <h2>Content</h2>
+    <ul>
+        <li>Further description for Project 2</li>
+    </ul>
+
+    <h2>Screenshots</h2>
+    <img src="../images/NEA temp replacement.png" alt="Project 2 Screenshot" class="project-screenshot">
+
+    <div class="project-back-wrapper">
+        <a href="../index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+</main>
+
+<!-- 
+  Icons powered by Ionicons (https://ionic.io/ionicons)
+  Copyright (c) Ionic Team. Licensed under the MIT License.
+-->
+<script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

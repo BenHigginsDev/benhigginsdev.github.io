@@ -212,6 +212,10 @@ nav {
   width: 100%;
 }
 
+.project-row:nth-child(even) {
+  flex-direction: row; /* Flips the layout for even-numbered projects */
+}
+
 /* Right Side: Text content */
 .project-text {
   flex: 1;             
@@ -302,8 +306,12 @@ nav {
 @media (max-width: 800px) {
   /* Give the mobile nav bar room */
   nav {
-    padding: 15px 5%;
-    gap: 15px;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .nav-content {
+    padding: 0 15px;
   }
 
   h1 {
@@ -325,20 +333,23 @@ nav {
     gap: 8px;
   }
 
-.project-row {
+  .project-row, .project-row:nth-child(even) {
     flex-direction: column; /* Stacks components vertically on smaller screens */
+    align-items: stretch;
     gap: 30px;
   }
   
   /* FORCE STACKING ORDER: Forces screenshot to top, text underneath */
   .project-image-wrapper {
-    order: 1;            /* Places image block first in the stack */
+    order: 1; /* Places image block first in the stack */
     width: 100%;
-    padding: 20px;
+    justify-content: flex-start;
   }
 
   .project-text {
-    order: 2;            /* Places text block second in the stack */
+    order: 2; /* Places text block second in the stack */
+    width: 100%;
+    text-align: left;
   }
   
   .project-text h3 {
