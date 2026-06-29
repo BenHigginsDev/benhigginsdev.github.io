@@ -15,7 +15,7 @@
   --bg-color: #ffffff;         /* White background */
   --text-color: #222222;       /* Dark grey text */
   --nav-bg: #f5f5f5;          /* Light grey navigation rectangle */
-  --border-color: #e0e0e0;     /* Lighter separator line colour */
+  --border-color: #585858;     /* Lighter separator line colour */
 }
 
 /* ==========================================================================
@@ -148,6 +148,13 @@ nav {
 /* ==========================================================================
    PAGE-SPECIFIC STYLES (Home Page / Projects)
    ========================================================================== */
+.profile-intro {
+    display: flex;
+    align-items: center; /* Vertically centers the text and image */
+    gap: 20px; /* Adds space between the text and image */
+    margin: 0 0 40px
+}
+
 /* Intro header and paragraph formatting */
 .profile-intro h1 {
     margin: 0 0 10px 0; /* Overrides global h1 margin to keep the intro tight */
@@ -155,6 +162,24 @@ nav {
 
 .profile-intro p {
     margin: 0 0 40px 0; /* Overrides global paragraph margin */
+}
+
+/* Clear out older conflicting inline margins */
+.profile-text h1 {
+    margin: 0 0 4px 0; 
+}
+
+.profile-text p {
+    margin: 0; 
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-left: 20px; /* Adds space between the image and text */
+    border: 5px solid var(--border-color);
 }
 
 /* Projects section formatting */
