@@ -1,3 +1,5 @@
+// THEME TOGGLE CODE
+
 // Grab the button element from the HTML
 const toggleButton = document.querySelector('.theme-toggle');
 const themeIcon = toggleButton.querySelector('ion-icon');
@@ -51,4 +53,14 @@ toggleButton.addEventListener('mouseenter', () => {
 
 toggleButton.addEventListener('mouseleave', () => {
     updateThemeIcon(false);
+});
+
+// CONTACT FORM RESET CODE
+
+// Clears the contact form whenever the page becomes visible (including back-button navigation)
+window.addEventListener('pageshow', function() {
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.reset();
+    }
 });

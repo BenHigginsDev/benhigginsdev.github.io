@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+<link rel="icon" type="image/x-icon" href="/images/favicon.png">
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- This script stops the loading flash by checking the theme before anything else loads -->
+<script>
+    (function() {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        // If user explicitly chose light, or if they have no preference set yet but their system prefers light
+        if (savedTheme === 'light') {
+            document.documentElement.className = 'light-mode';
+        } else {
+            document.documentElement.className = 'dark-mode';
+        }
+    })();
+</script>
+
+</head>
+<body>
+
+<nav>
+    <div class="nav-content">
+        <!-- The theme toggle button stays on the left -->
+        <button class="theme-toggle">
+            <ion-icon name="sunny-outline"></ion-icon>
+        </button>
+
+        <!-- The wrapper grouping your menu links together -->
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/contact" class="active">Contact</a>
+            <a href="/about">About</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <h1>Social Links</h1>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/benhigginsuk" class="contact-link" target="_blank" rel="noopener">
+        <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+      </a>
+      <a href="https://github.com/BenHigginsDev" class="contact-link" target="_blank" rel="noopener">
+        <ion-icon name="logo-github"></ion-icon> GitHub
+      </a>
+    </div>
+
+    
+    <h1>Contact Me</h1>
+    <hr class="form-divider">
+
+    <!-- The Contact Form -->
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      
+      <!-- Secret key token that tells the API where to route your emails -->
+      <input type="hidden" name="access_key" value="86c2951f-3c44-461e-b7a3-6619dfb24547">
+      
+      <!-- Redirects to your custom success page after sending -->
+      <input type="hidden" name="redirect" value="https://benhiggins.uk/success">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+      </div>
+
+      <!-- Honey-pot spam protection field (hidden from human users) -->
+      <input type="checkbox" name="botcheck" class="hidden-spam-field" style="display: none;">
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+</main>
+
+
+<!-- 
+  Icons powered by Ionicons (https://ionic.io/ionicons)
+  Copyright (c) Ionic Team. Licensed under the MIT License.
+-->
+<script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
