@@ -225,12 +225,14 @@ nav {
 
 .project-text h3 {
   margin: 0 0 16px 0;
-  font-size: 32px;     
-  color: #ffffff;
+  font-size: 32px;    
+  color: var(--text-color);
 }
 
 .light-mode .project-text h3 {
-  color: #111111;
+  margin: 0 0 16px 0;
+  font-size: 32px;    
+  color: var(--text-color);
 }
 
 .project-text p {
@@ -337,11 +339,12 @@ nav {
 .form-group input,
 .form-group textarea {
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   font-family: inherit;
   font-size: 1rem;
-  background-color: #fff;
+  background-color: var(--nav-bg);
+  color: var(--text-color);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
