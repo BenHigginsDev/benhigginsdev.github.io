@@ -11,7 +11,7 @@ A clean and fully responsive personal portfolio website built from scratch to sh
 
 ## Built With
 - HTML5 (Semantic markup)
-- CSS3 (Custom properties/variables, flexbox)
+- CSS3 (Variables, flexbox)
 - JavaScript (ES6+) (DOM manipulation, theme handling, form validation resets)
 - Web3Forms API (Serverless form handling)
 - Cloudflare & GitHub Pages (Hosting and DNS management)
